@@ -20,6 +20,7 @@ export default function RegisterPage() {
   });
 
   const [errorMsg, setErrorMsg] = useState('');
+  const [dbWarning, setDbWarning] = useState('');
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -39,6 +40,7 @@ export default function RegisterPage() {
 
     const res = await register(formData);
     if (res.success) {
+      if (res.db_warning) setDbWarning(res.db_warning);
       showToast('Registration successful! Welcome to Royal Sweet Shop.');
       navigate('/');
     } else {
@@ -56,6 +58,7 @@ export default function RegisterPage() {
         </div>
 
         {errorMsg && <div className="auth-error-alert">{errorMsg}</div>}
+        {dbWarning && <div className="auth-db-warning">{dbWarning}</div>}
 
         <form className="auth-form" onSubmit={handleSubmit}>
           <div className="form-group">

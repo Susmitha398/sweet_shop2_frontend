@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
 import Toast from './components/Toast';
+import DbStatusBanner from './components/DbStatusBanner';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -28,6 +29,7 @@ function App() {
         <LocationProvider>
           <CartProvider>
             <div className="royal-app" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+              <DbStatusBanner />
               <Navbar />
               <CartDrawer />
               <Toast />

@@ -126,3 +126,18 @@
   font-weight: 700;
   text-decoration: underline;
 }
+
+/* ── DB Warning Alert ── */
+.auth-db-warning {
+  background: #fefce8;
+  border: 1px solid #fbbf24;
+  color: #92400e;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}

@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
       if (data.success) {
         setUser(data.data);
         setToken(data.data.token || 'token_' + Date.now());
-        return { success: true, message: data.message };
+        return { success: true, message: data.message, db_warning: data.db_warning || null };
       } else {
         return { success: false, message: data.message || 'Login failed' };
       }
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
         };
         setUser(fallbackUser);
         setToken('fallback_token_' + Date.now());
-        return { success: true, message: 'Logged in successfully!' };
+        return { success: true, message: 'Logged in successfully!', db_warning: '⚠️ Could not reach the server. Your session is temporary and will not be saved.' };
       }
       return { success: false, message: 'Unable to connect to server.' };
     }
@@ -83,7 +83,7 @@ export const AuthProvider = ({ children }) => {
       if (data.success) {
         setUser(data.data);
         setToken(data.data.token || 'token_' + Date.now());
-        return { success: true, message: data.message };
+        return { success: true, message: data.message, db_warning: data.db_warning || null };
       } else {
         return { success: false, message: data.message || 'Registration failed' };
       }
@@ -98,7 +98,7 @@ export const AuthProvider = ({ children }) => {
       };
       setUser(fallbackUser);
       setToken('fallback_token_' + Date.now());
-      return { success: true, message: 'Account created successfully!' };
+      return { success: true, message: 'Account created successfully!', db_warning: '⚠️ Could not reach the server. Your account was not saved to the database.' };
     }
   };
 

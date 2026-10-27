@@ -12,6 +12,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [dbWarning, setDbWarning] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ export default function LoginPage() {
 
     const res = await login(email, password);
     if (res.success) {
+      if (res.db_warning) setDbWarning(res.db_warning);
       showToast('Logged in successfully! Welcome back.');
       navigate('/');
     } else {
@@ -46,6 +48,7 @@ export default function LoginPage() {
         </div>
 
         {errorMsg && <div className="auth-error-alert">{errorMsg}</div>}
+        {dbWarning && <div className="auth-db-warning">{dbWarning}</div>}
 
         <form className="auth-form" onSubmit={handleSubmit}>
           <div className="form-group">
