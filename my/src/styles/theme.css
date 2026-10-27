@@ -1,0 +1,85 @@
+:root {
+  --primary: #50545B;
+  --primary-dark: #383B40;
+  --primary-light: #737982;
+  --primary-subtle: #ECEEF0;
+  --gold: #D9822B;
+  --gold-dark: #B36214;
+  --gold-light: #FEF3D6;
+  --gold-border: #F5CD79;
+  --pistachio: #2E7D32;
+  --pistachio-light: #E8F5E9;
+  --bg-warm: #F3F4F5;
+  --bg-card: #FFFFFF;
+  --text-primary: #292C31;
+  --text-secondary: #5D626A;
+  --text-muted: #858B93;
+  --border-light: #E0E3E6;
+  --border-focus: #D9822B;
+  --shadow-sm: 0 2px 8px rgba(35, 39, 45, 0.06);
+  --shadow-md: 0 8px 24px rgba(35, 39, 45, 0.08);
+  --shadow-lg: 0 16px 36px rgba(35, 39, 45, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Outfit', sans-serif;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-warm);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #E7E9EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5C9CE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #737982;
+}

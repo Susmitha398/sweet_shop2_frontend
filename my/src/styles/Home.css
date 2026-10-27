@@ -1,0 +1,209 @@
+.hero-slider {
+  min-height: 390px;
+  margin: 1.5rem 0 2.5rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  border: 1px solid #D7DADF;
+  border-radius: var(--radius-lg);
+  background: #52565D;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-slide-image,
+.hero-slide-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide-image {
+  z-index: -2;
+  background-position: center;
+  background-size: cover;
+  animation: hero-image-in 0.55s ease both;
+}
+
+.hero-slide-shade {
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(28, 31, 36, 0.82), rgba(38, 41, 46, 0.55) 55%, rgba(38, 41, 46, 0.12));
+}
+
+.hero-slide-content {
+  max-width: 720px;
+  padding: 3rem 3.25rem 4.5rem;
+  color: #fff;
+  animation: hero-content-in 0.45s ease both;
+}
+
+.hero-slide-eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 6px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.hero-slide-content h1 {
+  max-width: 680px;
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.12;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
+}
+
+.hero-slide-content p {
+  max-width: 610px;
+  margin-top: 1rem;
+  color: #F4F4F3;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.hero-slide-action {
+  display: inline-flex;
+  margin-top: 1.5rem;
+  padding: 12px 21px;
+  align-items: center;
+  border-radius: var(--radius-full);
+  background: #F0C47A;
+  color: #303238;
+  font-weight: 800;
+  transition: var(--transition);
+}
+
+.hero-slide-action:hover {
+  background: #F6D89F;
+  transform: translateY(-2px);
+}
+
+.hero-slide-controls {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+
+.hero-slide-dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transition: var(--transition);
+}
+
+.hero-slide-dot.active {
+  width: 28px;
+  border-radius: var(--radius-full);
+  background: #fff;
+}
+
+@keyframes hero-image-in {
+  from { opacity: 0.55; transform: scale(1.02); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes hero-content-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.home-section {
+  margin-bottom: 3.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-badge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.section-view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary-subtle);
+  color: var(--primary);
+  border: 1px solid #D9DDE1;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .hero-slider {
+    min-height: 440px;
+  }
+
+  .hero-slide-content {
+    padding: 2.25rem 1.25rem 4.25rem;
+  }
+
+  .hero-slide-shade {
+    background: linear-gradient(90deg, rgba(28, 31, 36, 0.82), rgba(38, 41, 46, 0.5));
+  }
+}
+
+.section-view-all-btn:hover {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+/* Sweets Grid */
+.sweets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+@media (max-width: 640px) {
+  .sweets-grid {
+    grid-template-columns: 1fr;
+  }
+}
